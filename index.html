@@ -523,15 +523,50 @@
 						<p class="col-para">PingFederate is a federation server that provides web single sign-on and API security for the resources in your Organization.</p>
 						<a style="padding:32px" name="Introduction"></a>
 						<!-- ### FEATURES ### -->
-						<p class="col-sub-headings"><b>1. Features</b></p>
+						<p class="col-sub-headings"><b>1. Configure HTML Form Adapter</b></p>
 						<ul style="margin-left:30px;" class="col-para-bulletpoints">
+							<li><p class="col-para-bulletpoints">1. In PingFederate console go to Identity Provider >> Adapters>>Click New Adapter</p></li>
+							<li><p class="col-para-bulletpoints">2. Provide the Instance Name & ID then Select “Type” as “HTML Form IdP Adapter” and click Next</p></li>
+							<br>
+						    <img src="assets/img/pf-1.png" alt="" class="col-images-intro"/>
+						<br>
+						<br>
+							<li><p class="col-para-bulletpoints">3. In the Next page, Add the “Password Credentials Validator” and click “Show advanced field” to add “/idplogout” in Logout Path Text Field. Then Click Next.</p></li>
+							<br>
+						    <img src="assets/img/pf-2.png" alt="" class="col-images-intro"/>
+						<br>
+							<img src="assets/img/pf-3.png" alt="" class="col-images-intro"/>
+						<br>
+						<br>
+							<li><p class="col-para-bulletpoints">4. Add any additional attribute in Extended Contracts if required or leave the default values as such</p></li>
+						<br>
+							<img src="assets/img/pf-4.png" alt="" class="col-images-intro"/>
+						<br>
+						<br>
+							<li><p class="col-para-bulletpoints">5. Enable “Pseudonym” for username (SP Partners may choose to receive so that they can uniquely identify a user) and click Next </p></li>
+						<br>
+							<img src="assets/img/pf-5.png" alt="" class="col-images-intro"/>
+						<br>
+						<br>
+							<li><p class="col-para-bulletpoints">6. Configure the Adapter Contract Mapping or leave it as default and click Next.</p></li>
+						<br>
+							<img src="assets/img/pf-6.png" alt="" class="col-images-intro"/>
+						<br>
+						<br>
+							<li><p class="col-para-bulletpoints">7. Review the Summary and Click Done and proceed to Save the adapter</p></li>
+
+
+
+
+
+							<li><p class="col-para-bulletpoints"></p></li>
 							<li><p class="col-para-bulletpoints">Works seamlessly with PingFederate.</p></li>
-							<li><p class="col-para-bulletpoints">Eliminated the need for additional
-									Oracle components like Oracle Internet Directory or EBS AccessGate.</p></li>
-							<li><p class="col-para-bulletpoints">Provides flexibility of Deployment
-									Methods: The EIK can be installed on the PingFederate server or any
-									other J2EE container.</p></li>
-							<li><p class="col-para-bulletpoints">Supports Just-In-Time provisioning.</p></li>
+							<li><p class="col-para-bulletpoints">Work seamlessly with PingFederate.</p></li>
+							<li><p class="col-para-bulletpoints">Works seamlessly with PingFederate.</p></li>
+							<li><p class="col-para-bulletpoints">Works seamlessly with PingFederate.</p></li>
+							<li><p class="col-para-bulletpoints">Works seamlessly with PingFederate.</p></li>
+							<li><p class="col-para-bulletpoints">Works seamlessly with PingFederate.</p></li>
+							<li><p class="col-para-bulletpoints">Works seamlessly with PingFederate.</p></li>
 							<br>
 
 
