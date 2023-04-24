@@ -631,28 +631,62 @@
 						customize various settings, including the token format, lifetime, and attribute
 						contract for this instance.</p>
 
-
-
-
-
-
-					<li><p class="col-para-bulletpoints">2. Add any Data Store details if values are pulled from a Data Store. If not, click Next</p></li>
-					<li><p class="col-para-bulletpoints">3. In Contract Fulfillment, Map the USER_NAME & USER_KEY value from either the Adapter or Data Store </p></li>
 					<br>
-							<img src="assets/img/pf-9.png" alt="" class="col-images-intro"/>
-						<br>
-						<br>
-					<li><p class="col-para-bulletpoints">4. In the next page, provide any access restriction criteria details if the restriction of user access is required or click Next</p></li>
-					<li><p class="col-para-bulletpoints">5. Review the Summary and then click Done and Save</p></li>
+					<img src="assets/img/pf-11.png" alt="" class="col-images-intro"/>
+					<br>
+					<br>
+					<li><p class="col-para-bulletpoints">3. Under JWS Algorithm Dropdown, choose RSA using SHA-256</p></li>
+					<li><p class="col-para-bulletpoints">4.   Under Active Signing Certificate Key ID Dropdown, select the key ID which is added above</p></li>
+					<br>
+					<img src="assets/img/pf-12.png" alt="" class="col-images-intro"/>
+					<br>
+					<br>
+
+					<li><p class="col-para-bulletpoints">5. In the next page, there will be no changes to the Session Validation Settings here. So,	leave it defaults.</p></li>
+					<li><p class="col-para-bulletpoints">6. In the below screenshot, In Access Token Attribute Contract, we define the attribute
+						contract for the access tokens issued by this access token management instance.
+						Extend the contract with the ‘eik_username’ & ‘username’ attributes.</p></li>
+
+					<br>
+					<img src="assets/img/pf-13.png" alt="" class="col-images-intro"/>
+					<br>
+					<br>
+
+					<li><p class="col-para-bulletpoints">7. Click Next</p></li>
+					<li><p class="col-para-bulletpoints">8. Under Access Control, we can restrict the clients who can use this Access Token
+						Management Instance, which we do not use here. So, click Next.</p></li>
+					<li><p class="col-para-bulletpoints">9. Review the Summary and Click Save.</p></li>
+						
 
 					</ul>
 
+					<p class="col-sub-headings"><b>2.5. Access Token Mapping</b></p>
+					<p class="col-para">Access Token Mapping is used to map the attributes to fulfill the access token attribute
+						contract. This configuration maps from a persistent grant into the access token attribute
+						contract and there should be a default mapping configured for each access token manager.</p>
+					<ul style="margin-left:30px;" class="col-para-bulletpoints"></ul>
+					<li><p class="col-para-bulletpoints">1.  Go to OAuth Server >> Under Token Mapping >> Access Token Mapping.</p></li>
+					<br>
+					<img src="assets/img/pf-10.png" alt="" class="col-images-intro"/>
+					<br>
+					<br>
+					<li><p class="col-para-bulletpoints">2.Map the “Context” (IDP Adapter: HTMLFormAdapter) to “Access Token Manager”
+						(JSONWebToken) and then click “Add Mapping”.</p></li>
 
+					<br>
+					<img src="assets/img/pf-14.png" alt="" class="col-images-intro"/>
+					<br>
+					<br>
 
-
-
-
-
+					<li><p class="col-para-bulletpoints">3. In “Attribute Source Lookup” Tab (optional), we can add any Attribute Source to fetch
+						the attribute values from any of your desired datastore and on completion click Next. </p></li>
+					<li><p class="col-para-bulletpoints">4. In “Contract Fulfillment” tab, map the Source as Persistent Grant and its value as
+						“USER_KEY” for all contracts as shown in the below screenshot.</p></li>
+					
+					<br>
+					<img src="assets/img/pf-15.png" alt="" class="col-images-intro"/>
+					<br>
+					<br>
 
 
 
