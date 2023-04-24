@@ -278,42 +278,52 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Installation</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-layout-text-window-reverse"></i><span>Deploying EIK in PingFederate</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
          <li>
             <a href="#pre-reqs section">
-              <i class="bi bi-circle"></i><span>Pre-requisites</span>
+              <i class="bi bi-circle"></i><span>Creating the "EBSAuth" Directory</span>
             </a>
           </li>
           <li>
             <a href="#install-authenion section">
-		    <i class="bi bi-circle"></i><span>Install Authenion</span>
+		    <i class="bi bi-circle"></i><span>Setting the "EIK_HOME" Environment Variable</span>
             </a>
           </li> 
            <li>
             <a href="#setup section">
-              <i class="bi bi-circle"></i><span>Setup Authenion</span>
+              <i class="bi bi-circle"></i><span>Placing the License File</span>
             </a>
           </li>
           <li>
             <a href="#start-stop section">
-              <i class="bi bi-circle"></i><span>Start & Stop Services</span>
+              <i class="bi bi-circle"></i><span>EIKAuth Config File Generation</span>
             </a>
           </li> 
            <li>
             <a href="#health-check section">
-              <i class="bi bi-circle"></i><span>Authenion Health-check</span>
+              <i class="bi bi-circle"></i><span>EBS DataSource (DBCX) File Creation</span>
             </a>
           </li>
           <li>
             <a href="#idp-cert section">
-              <i class="bi bi-circle"></i><span>Install Identiy Provider's Certificate into Authenion Trust Store</span>
+              <i class="bi bi-circle"></i><span>Deploying the log4j2.xml File</span>
             </a>
           </li> 
            <li>
             <a href="#ssl-cert section">
-              <i class="bi bi-circle"></i><span>Install SSL Certificate for Authenion</span>
+              <i class="bi bi-circle"></i><span>Deploying the cacerts File</span>
+            </a>
+          </li>
+		  <li>
+            <a href="#ssl-cert section">
+              <i class="bi bi-circle"></i><span>Deploying the security.properties File</span>
+            </a>
+          </li>
+		  <li>
+            <a href="#ssl-cert section">
+              <i class="bi bi-circle"></i><span>Deploying EBSAuth.war Binary</span>
             </a>
           </li>
           
@@ -322,73 +332,12 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>Console Navigation & Configurations</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-bar-chart"></i><span>System Profile Parameter changes in EBS</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="#Applications / Dashboard page"">
-              <i class="bi bi-circle"></i><span>Dashboard/Applications</span>
-            </a>
-          </li>
-         <li>
-            <a href="#Getting config-data into the UI">
-              <i class="bi bi-circle"></i><span>Import - Getting config-data into the UI</span>
-            </a>
-          </li>
-          <li>
-            <a href="#OIDC Configuration">
-              <i class="bi bi-circle"></i><span>OIDC Configuration</span>
-            </a>
-          </li>
-            </a>
-          </li>
-          <li>
-            <a href="#Sidebar">
-              <i class="bi bi-circle"></i><span>Sidebar</span>
-            </a>
-          </li>
-       <li>
-            <a href="#Applications">
-              <i class="bi bi-circle"></i><span>Applications</span>
-            </a>
-          </li>
-         <li>
-            <a href="#Virtual Servers">
-              <i class="bi bi-circle"></i><span>Virtual Servers</span>
-            </a>
-          </li>
-          <li>
-            <a href="#Application Hosts">
-              <i class="bi bi-circle"></i><span>Application Hosts</span>
-            </a>
-          </li>
-            </a>
-          </li>
-          <li>
-            <a href="#Header Mapping">
-              <i class="bi bi-circle"></i><span>Header Mappings</span>
-            </a>
-          </li>
-   <li>
-            <a href="#Resources">
-              <i class="bi bi-circle"></i><span>Resources</span>
-            </a>
-          </li>
-         <li>
-            <a href="#Authenion Status">
-              <i class="bi bi-circle"></i><span>Authenion Status</span>
-            </a>
-          </li>
-          <li>
-            <a href="#Export">
-              <i class="bi bi-circle"></i><span>Export</span>
-            </a>
-          </li>
-            </a>
-          </li>
-          <li>
-            <a href="#Sync">
-              <i class="bi bi-circle"></i><span>Sync</span>
+              <i class="bi bi-circle"></i><span>System Profile Changes</span>
             </a>
           </li>
         </ul>
@@ -396,7 +345,7 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>Configure your Identity Provider</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-gem"></i><span>Configuring Log Monitoring With Splunk</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
