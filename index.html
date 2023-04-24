@@ -556,10 +556,12 @@
 						<br>
 						<br>
 							<li><p class="col-para-bulletpoints">7. Review the Summary and Click Done and proceed to Save the adapter</p></li>
- 
-							<p class="col-sub-headings"><b>2. OAuth Server side Configuration</b></p>
-							<p class="col-para">Configuring Oauth/OIDC flow PingFederate & EBS Integration Kit requires the following sections to be configured.</p>
-							<ul style="margin-left:30px;" class="col-para-bulletpoints">
+						
+
+						</ul>	
+						<p class="col-sub-headings"><b>2. OAuth Server side Configuration</b></p>
+						<p class="col-para">Configuring Oauth/OIDC flow PingFederate & EBS Integration Kit requires the following sections to be configured: </p>
+						<ul style="margin-left:30px;" class="col-para-bulletpoints">
 								<li><p class="col-para-bulletpoints">Authorization server settings</p></li>
 								<li><p class="col-para-bulletpoints">Scope Management</p></li>
 								<li><p class="col-para-bulletpoints">IDP Adapter Mapping</p></li>
@@ -567,41 +569,88 @@
 								<li><p class="col-para-bulletpoints">Access Token Mapping</p></li>
 								<li><p class="col-para-bulletpoints">OpenID Connect Policy Management</p></li>
 								<li><p class="col-para-bulletpoints">Client Creation</p></li>
-								
+
+							</ul>
+						<p class="col-sub-headings"><b>2.1. Authorization Server Settings</b></p>
+						<p class="col-para">Authorization Server Settings provide general configuration and policy for the PingFederate Authorization Server</p>
+						<ul style="margin-left:30px;" class="col-para-bulletpoints"></ul>
+						<li><p class="col-para-bulletpoints">1. Go to OAuth Server >> Under Authorization Server >> Authorization Server Settings</p></li>
+						<li><p class="col-para-bulletpoints">2. Enable the Track Users session for Log out checkbox and leave the remaining as default and click Save</p></li>
+						<br>
+							<img src="assets/img/pf-7.png" alt="" class="col-images-intro"/>
+						<br>
+						<br>
+					</ul>
+
+
+					<p class="col-sub-headings"><b>2.2. Scope Management</b></p>
+					<p class="col-para">Scopes can be declared as dynamic, which allows OAuth clients to requestscopes where a
+						component of the scope name is variable. Common scopes are available to OAuth clients
+						by default unless individual clients are configured to restrict common scopes</p>
+					<ul style="margin-left:30px;" class="col-para-bulletpoints"></ul>
+					<li><p class="col-para-bulletpoints">1.  Go to OAuth Server >>Under Authorization Server >> Scope Management</p></li>
+					<li><p class="col-para-bulletpoints">2. The Default scopes for PingFederate are Email, Profile, Openid, Address, Phone</p></li>
+					<br>
+							<img src="assets/img/pf-8.png" alt="" class="col-images-intro"/>
+						<br>
+						<br>
+					</ul>
+
+
+
+					<p class="col-sub-headings"><b>2.3. IdP Adapter Mapping</b></p>
+					<p class="col-para">This configuration allows you tomap attributes based on an IdP adapter configuration into
+						the USER_KEY and USER_NAME attributes (presented to the user for authorization
+						permission) for a persistent grant, as well as the extended attributes</p>
+					<ul style="margin-left:30px;" class="col-para-bulletpoints"></ul>
+					<li><p class="col-para-bulletpoints">1. Go to OAuth Server >> Authorization Server >> IdP Adapter Mapping and select HTML Form Adapter and click Add Mapping  </p></li>
+					<li><p class="col-para-bulletpoints">2. Add any Data Store details if values are pulled from a Data Store. If not, click Next</p></li>
+					<li><p class="col-para-bulletpoints">3. In Contract Fulfillment, Map the USER_NAME & USER_KEY value from either the Adapter or Data Store </p></li>
+					<br>
+							<img src="assets/img/pf-9.png" alt="" class="col-images-intro"/>
+						<br>
+						<br>
+					<li><p class="col-para-bulletpoints">4. In the next page, provide any access restriction criteria details if the restriction of user access is required or click Next</p></li>
+					<li><p class="col-para-bulletpoints">5. Review the Summary and then click Done and Save</p></li>
+
+					</ul>
+
+
+					<p class="col-sub-headings"><b>2.4. Access Token Management</b></p>
+					<p class="col-para">PingFederate uses Access Token Management plugins to issue and validate OAuth
+						access tokens. Each plugin instance can have its own token type, configuration settings,
+						and attribute contract.</p>
+					<ul style="margin-left:30px;" class="col-para-bulletpoints"></ul>
+					<li><p class="col-para-bulletpoints">1.  Go to OAuth Server >> Under Token Mapping >> Access Token Management >> Create	New Instance by providing the Instance Name & ID, Type as “JSON Web Token” Click Next.</p></li>
+					<br>
+					<img src="assets/img/pf-10.png" alt="" class="col-images-intro"/>
+					<br>
+					<br>
+					<li><p class="col-para-bulletpoints">2. In Instance Configuration Section, under Certificates, Add the Signing & Decryption certificate </p></li>
+					<p class="col-para">Note: When defining an access token management instance, you can
+						customize various settings, including the token format, lifetime, and attribute
+						contract for this instance.</p>
 
 
 
 
 
 
+					<li><p class="col-para-bulletpoints">2. Add any Data Store details if values are pulled from a Data Store. If not, click Next</p></li>
+					<li><p class="col-para-bulletpoints">3. In Contract Fulfillment, Map the USER_NAME & USER_KEY value from either the Adapter or Data Store </p></li>
+					<br>
+							<img src="assets/img/pf-9.png" alt="" class="col-images-intro"/>
+						<br>
+						<br>
+					<li><p class="col-para-bulletpoints">4. In the next page, provide any access restriction criteria details if the restriction of user access is required or click Next</p></li>
+					<li><p class="col-para-bulletpoints">5. Review the Summary and then click Done and Save</p></li>
+
+					</ul>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-							<li><p class="col-para-bulletpoints"></p></li>
-							<li><p class="col-para-bulletpoints">Works seamlessly with PingFederate.</p></li>
-							<li><p class="col-para-bulletpoints">Work seamlessly with PingFederate.</p></li>
-							<li><p class="col-para-bulletpoints">Works seamlessly with PingFederate.</p></li>
-							<li><p class="col-para-bulletpoints">Works seamlessly with PingFederate.</p></li>
-							<li><p class="col-para-bulletpoints">Works seamlessly with PingFederate.</p></li>
-							<li><p class="col-para-bulletpoints">Works seamlessly with PingFederate.</p></li>
-							<li><p class="col-para-bulletpoints">Works seamlessly with PingFederate.</p></li>
-							<br>
 
 
 
