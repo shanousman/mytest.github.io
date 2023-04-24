@@ -708,6 +708,77 @@
 					<li><p class="col-para-bulletpoints">6.Review the Summary and tap Save.</p></li>
 								
 
+					<p class="col-sub-headings"><b>2.6.OpenID Connect Policy Management </b></p>
+
+					<p class="col-para">Here we define OpenID Connect policies and manage them for obtaining user attributes
+						which act as the claims to be sent in an ID Token and, also in response to requests received
+						at the PingFederate User Info endpoint. Policies that are defined here can be mapped to
+						specific OAuth clients.</p>
+					<li><p class="col-para-bulletpoints">1.Go to OAuth Server >> Token Mapping >> OpenID Connect Policy Management >> Add
+							Policy.</p></li>
+					<li><p class="col-para-bulletpoints">2.Provide a Policy Name & Select the Access Token Manager and leave the remaining as
+							default. Click Next.</p></li>
+
+					<br>
+					<img src="assets/img/pf-17.png" alt="" class="col-images-intro"/>
+
+					<li><p class="col-para-bulletpoints">3.Under Attribute Contract, Extend the Contract by manually adding ‘eik_username’ and
+						delete the other attributes present. Enable checkboxes for ‘Override Default Delivery,.</p></li>
+
+					<br>
+					<img src="assets/img/pf-18.png" alt="" class="col-images-intro"/>
+					<br>
+					<br>	
+
+					<li><p class="col-para-bulletpoints">4.Click Next.</p></li>
+
+					<li><p class="col-para-bulletpoints">5.Under Attribute Scopes Section, select openid from the Scope dropdown and in
+						Attributes tick the ‘eik_username’ checkbox.</p></li>
+
+					<br>
+					<img src="assets/img/pf-19.png" alt="" class="col-images-intro"/>
+					<br>
+					<br>	
+
+					<li><p class="col-para-bulletpoints">6.Attributes can be fetched from any of the datastore at the runtime or leave it as to use
+						the values presented in the Token.</p></li>
+
+					<br>
+					<img src="assets/img/pf-20.png" alt="" class="col-images-intro"/>
+					<br>
+					<br>	
+
+					<li><p class="col-para-bulletpoints">7.Under Contract Fulfillment Section, Map the Sub & eik_username attribute from the
+							source - Access Token and value – username.</p></li>
+
+
+
+
+					<p class="col-para">Note: In the Contract Fulfillment screen, we map attributes from the
+								access token or other sources to fulfill the attribute contract. Here, the value is
+								provided from the access token.</p>
+
+					<br>
+					<img src="assets/img/pf-21.png" alt="" class="col-images-intro"/>
+					<br>
+					<br>
+
+					<li><p class="col-para-bulletpoints">8.In the next page, provide any restriction rules in case of restricting any unauthorized
+						access.</p></li>
+
+						<p class="col-para">Note: In this screen, we define the criteria that must be satisfied so that
+							PingFederate processes the request further. In essence, this token authorization
+							feature provides the capability to conditionally approve or reject requests based on
+							individual attributes. We can define multiple criteria, so that in this case, ALL the
+							criteria must be satisfied in order for PingFederate to move a request to the next
+							phase.</p>
+
+							<br>
+							<img src="assets/img/pf-22.png" alt="" class="col-images-intro"/>
+							<br>
+							<br>
+
+							<li><p class="col-para-bulletpoints">9.Review Summary and Click Save.</p></li>
 
 
 
@@ -715,9 +786,21 @@
 
 
 
-						<a style="padding:32px" name="Enterprise Deployement Model"></a>
-						<p class="col-sub-headings"><b>2. Enterprise Deployment Model</b></p>
-						<p class="col-para">Authenion supports a Gateway architecture for its
+
+
+
+
+
+
+
+
+
+
+
+
+					<a style="padding:32px" name="Enterprise Deployement Model"></a>
+					<p class="col-sub-headings"><b>2. Enterprise Deployment Model</b></p>
+					<p class="col-para">Authenion supports a Gateway architecture for its
 							protected Oracle applications. In this model, the traffic is initially
 							directed to Authenion. Authenion grants or denies access by redirecting
 							the traffic to Authentication providers.</p>
