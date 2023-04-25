@@ -909,41 +909,10 @@
 
 
 																		<li><p class="col-para-bulletpoints">3.On running the command, we get a dialog box as follows, Enter all values as per the
-																			configuration for all the fields using the template given below:
-																			# Configuration Panel #
-																			icx_cookie_domain = .<domain name> (the “ . “ period should preced the root domain
-																			name)
-																			icx_cookie_path = /
-																			ebs_landing_page = <EBS Home Page URL>
-																			ebs_logout_page = https://<pf or pa domain name>:<port>/idp/startSLO.ping
-																			#OIDC Configuration parameters 
-																			authentication_server_url = https://<pf/pa hostname>:<port>/as/authorization.oauth2
-																			token_endpoint_url = https:// <pf/pa hostname>:<port>/as/token.oauth2
-																			introspect_url = https:// <pf/pa hostname>:<port>/as/introspect.oauth2
-																			redirect_uri = https:// <pf/pa hostname>:<port>/EBSAuth/handler
-																			jwks_validation_url = https:// <pf/pa hostname>:<port>/pf/JWKS
-																			grant_type = authorization_code
-																			auth_type = OIDC
-																			JIT = false
-																			Scope = openid (necessary scope to return EBS username from PingFederate/LDAP store)
-																			Authentication Attribute = eik_username (non-editable)
-																			client_id = ***** # CLIENT_ID created on the PF console
-																			client_secret = ***** # CLIENT_SECRET created on the PF console
-																			Enter the context path of WAR = <Context of the war>
-																			(i.e., For EBSAuth.war, context is /EBSAuth)
-																			(Optional - For EBSAuthInst2.war, context is /EBSAuthInst2)
-																			Enter the issuer = <PingFederate OAuth/OIDC issuer>
-																			logoPath=https://likemindsconsulting.com/wp-content/uploads/2020/07/logo-1.png
-																			helpdeskMessage=<p>If issue persists, please contact technical 
-																			<ahref="https://support.likemindsconsulting.com">support</a></p>
-																			userinfo_url=https://<pf/pa hostname>:<port>/:9031/idp/userinfo.openid
-																			trustStorePath= https://<pf/pa hostname>:<port>/EBSAuth /cacerts
-																			UsePrivateTrustStore=true
-																			trustStorePassword=changeit
-																			# END #</p></li>
+																			configuration for all the fields using the template given below:</p></li>
 
 																			<br>
-																			<img src="assets/img/pf-27.png" alt="" class="col-images-intro"/>
+																			<img src="assets/img/eik-1.png" alt="" class="col-images-intro"/>
 																			<br>
 																			<br>
 
