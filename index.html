@@ -509,11 +509,11 @@
 						<a style="padding:32px" name="Overview-of-the-flow"></a>
 						<p class="col-sub-headings"><b>4. Overview of the flow</b></p>
 						<ul style="margin-left:30px;" class="col-para-bulletpoints">
-							<li><p class="col-para-bulletpoints">1. When a user tries to login, his/her credentials are sent to Pingfederate</p></li>
-							<li><p class="col-para-bulletpoints">2. Pingfederate validates the entered credentials against the configured Authentication Store (i.e.,any LDAP directory)</p></li>
-							<li><p class="col-para-bulletpoints">3. The existence of the authenticated user will be checked against the EBS Database. If the user does exist in the EBS DB, an EBS session would be created, and the user would be allowed access to the requested page in EBS</p></li>
-							<li><p class="col-para-bulletpoints">4. If the authenticated user does not exist in the EBS DB, the user would not be authorized to access the EBS Application</p></li>
-							<li><p class="col-para-bulletpoints">5. If Just-In-Time Provisioning is enabled, authenticated users not present in the EBS DB would be	provisioned by the EBS IKT, and EBS Sessions would then be created, thereby giving access to the EBS Application</p></li>
+							<li><p class="col-para">1. When a user tries to login, his/her credentials are sent to Pingfederate</p></li>
+							<li><p class="col-para">2. Pingfederate validates the entered credentials against the configured Authentication Store (i.e.,any LDAP directory)</p></li>
+							<li><p class="col-para">3. The existence of the authenticated user will be checked against the EBS Database. If the user does exist in the EBS DB, an EBS session would be created, and the user would be allowed access to the requested page in EBS</p></li>
+							<li><p class="col-para">4. If the authenticated user does not exist in the EBS DB, the user would not be authorized to access the EBS Application</p></li>
+							<li><p class="col-para">5. If Just-In-Time Provisioning is enabled, authenticated users not present in the EBS DB would be	provisioned by the EBS IKT, and EBS Sessions would then be created, thereby giving access to the EBS Application</p></li>
 							
 							
 						</ul>
@@ -525,15 +525,15 @@
 						<p class="col-para">PingFederate is a federation server that provides web single sign-on and API security for the resources in your Organization.</p>
 						<a style="padding:32px" name="Introduction"></a>
 						<!-- ### FEATURES ### -->
-						<p class="col-sub-headings"><b>1. Configure HTML Form Adapter</b></p>
+						<p class="col-sub-headings"><b>2.0 Configure HTML Form Adapter</b></p>
 						<ul style="margin-left:30px;" class="col-para-bulletpoints">
-							<li><p class="col-para-bulletpoints">1. In PingFederate console go to Identity Provider >> Adapters>>Click New Adapter</p></li>
-							<li><p class="col-para-bulletpoints">2. Provide the Instance Name & ID then Select “Type” as “HTML Form IdP Adapter” and click Next</p></li>
+							<li><p class="col-para">1. In PingFederate console go to Identity Provider >> Adapters>>Click New Adapter</p></li>
+							<li><p class="col-para">2. Provide the Instance Name & ID then Select “Type” as “HTML Form IdP Adapter” and click Next</p></li>
 							<br>
 						    <img src="assets/img/pf-1.png" alt="" class="col-images-intro"/>
 						<br>
 						<br>
-							<li><p class="col-para-bulletpoints">3. In the Next page, Add the “Password Credentials Validator” and click “Show advanced field” to add “/idplogout” in Logout Path Text Field. Then Click Next.</p></li>
+							<li><p class="col-para">3. In the Next page, Add the “Password Credentials Validator” and click “Show advanced field” to add “/idplogout” in Logout Path Text Field. Then Click Next.</p></li>
 							<br>
 						    <img src="assets/img/pf-2.png" alt="" class="col-images-intro"/>
 						<br>
@@ -542,26 +542,26 @@
 							<img src="assets/img/pf-3.png" alt="" class="col-images-intro"/>
 						<br>
 						<br>
-							<li><p class="col-para-bulletpoints">4. Add any additional attribute in Extended Contracts if required or leave the default values as such</p></li>
+							<li><p class="col-para">4. Add any additional attribute in Extended Contracts if required or leave the default values as such</p></li>
 						<br>
 							<img src="assets/img/pf-4.png" alt="" class="col-images-intro"/>
 						<br>
 						<br>
-							<li><p class="col-para-bulletpoints">5. Enable “Pseudonym” for username (SP Partners may choose to receive so that they can uniquely identify a user) and click Next </p></li>
+							<li><p class="col-para">5. Enable “Pseudonym” for username (SP Partners may choose to receive so that they can uniquely identify a user) and click Next </p></li>
 						<br>
 							<img src="assets/img/pf-5.png" alt="" class="col-images-intro"/>
 						<br>
 						<br>
-							<li><p class="col-para-bulletpoints">6. Configure the Adapter Contract Mapping or leave it as default and click Next.</p></li>
+							<li><p class="col-para">6. Configure the Adapter Contract Mapping or leave it as default and click Next.</p></li>
 						<br>
 							<img src="assets/img/pf-6.png" alt="" class="col-images-intro"/>
 						<br>
 						<br>
-							<li><p class="col-para-bulletpoints">7. Review the Summary and Click Done and proceed to Save the adapter</p></li>
+							<li><p class="col-para">7. Review the Summary and Click Done and proceed to Save the adapter</p></li>
 						
 
 						</ul>	
-						<p class="col-sub-headings"><b>2. OAuth Server side Configuration</b></p>
+						<p class="col-sub-headings"><b>2.1 OAuth Server side Configuration</b></p>
 						<p class="col-para">Configuring Oauth/OIDC flow PingFederate & EBS Integration Kit requires the following sections to be configured: </p>
 						<ul style="margin-left:30px;" class="col-para-bulletpoints">
 								<li><p class="col-para-bulletpoints">Authorization server settings</p></li>
@@ -573,12 +573,12 @@
 								<li><p class="col-para-bulletpoints">Client Creation</p></li>
 
 							</ul>
-						<p class="col-sub-headings"><b>2.1. Authorization Server Settings</b></p>
+						<p class="col-sub-headings"><b>2.2 Authorization Server Settings</b></p>
 						<p class="col-para">Authorization Server Settings provide general configuration and policy for the PingFederate Authorization Server</p>
 						<ul style="margin-left:30px;" class="col-para-bulletpoints">
 						
-						<li><p class="col-para-bulletpoints">1. Go to OAuth Server >> Under Authorization Server >> Authorization Server Settings</p></li>
-						<li><p class="col-para-bulletpoints">2. Enable the Track Users session for Log out checkbox and leave the remaining as default and click Save</p></li>
+						<li><p class="col-para">1. Go to OAuth Server >> Under Authorization Server >> Authorization Server Settings</p></li>
+						<li><p class="col-para">2. Enable the Track Users session for Log out checkbox and leave the remaining as default and click Save</p></li>
 						<br>
 							<img src="assets/img/pf-7.png" alt="" class="col-images-intro"/>
 						<br>
@@ -586,13 +586,13 @@
 					</ul>
 
 
-					<p class="col-sub-headings"><b>2.2. Scope Management</b></p>
+					<p class="col-sub-headings"><b>2.3 Scope Management</b></p>
 					<p class="col-para">Scopes can be declared as dynamic, which allows OAuth clients to requestscopes where a
 						component of the scope name is variable. Common scopes are available to OAuth clients
 						by default unless individual clients are configured to restrict common scopes</p>
 					<ul style="margin-left:30px;" class="col-para-bulletpoints">
-					<li><p class="col-para-bulletpoints">1.  Go to OAuth Server >>Under Authorization Server >> Scope Management</p></li>
-					<li><p class="col-para-bulletpoints">2. The Default scopes for PingFederate are Email, Profile, Openid, Address, Phone</p></li>
+					<li><p class="col-para">1.  Go to OAuth Server >>Under Authorization Server >> Scope Management</p></li>
+					<li><p class="col-para">2. The Default scopes for PingFederate are Email, Profile, Openid, Address, Phone</p></li>
 					<br>
 							<img src="assets/img/pf-8.png" alt="" class="col-images-intro"/>
 						<br>
@@ -601,25 +601,25 @@
 
 
 
-					<p class="col-sub-headings"><b>2.3. IdP Adapter Mapping</b></p>
+					<p class="col-sub-headings"><b>2.4 IdP Adapter Mapping</b></p>
 					<p class="col-para">This configuration allows you tomap attributes based on an IdP adapter configuration into
 						the USER_KEY and USER_NAME attributes (presented to the user for authorization
 						permission) for a persistent grant, as well as the extended attributes</p>
 					<ul style="margin-left:30px;" class="col-para-bulletpoints">
-					<li><p class="col-para-bulletpoints">1. Go to OAuth Server >> Authorization Server >> IdP Adapter Mapping and select HTML Form Adapter and click Add Mapping  </p></li>
-					<li><p class="col-para-bulletpoints">2. Add any Data Store details if values are pulled from a Data Store. If not, click Next</p></li>
-					<li><p class="col-para-bulletpoints">3. In Contract Fulfillment, Map the USER_NAME & USER_KEY value from either the Adapter or Data Store </p></li>
+					<li><p class="col-para">1. Go to OAuth Server >> Authorization Server >> IdP Adapter Mapping and select HTML Form Adapter and click Add Mapping  </p></li>
+					<li><p class="col-para">2. Add any Data Store details if values are pulled from a Data Store. If not, click Next</p></li>
+					<li><p class="col-para">3. In Contract Fulfillment, Map the USER_NAME & USER_KEY value from either the Adapter or Data Store </p></li>
 					<br>
 							<img src="assets/img/pf-9.png" alt="" class="col-images-intro"/>
 						<br>
 						<br>
-					<li><p class="col-para-bulletpoints">4. In the next page, provide any access restriction criteria details if the restriction of user access is required or click Next</p></li>
-					<li><p class="col-para-bulletpoints">5. Review the Summary and then click Done and Save</p></li>
+					<li><p class="col-para">4. In the next page, provide any access restriction criteria details if the restriction of user access is required or click Next</p></li>
+					<li><p class="col-para">5. Review the Summary and then click Done and Save</p></li>
 
 					</ul>
 
 
-					<p class="col-sub-headings"><b>2.4. Access Token Management</b></p>
+					<p class="col-sub-headings"><b>2.5 Access Token Management</b></p>
 					<p class="col-para">PingFederate uses Access Token Management plugins to issue and validate OAuth
 						access tokens. Each plugin instance can have its own token type, configuration settings,
 						and attribute contract.</p>
@@ -663,7 +663,7 @@
 
 					</ul>
 
-					<p class="col-sub-headings"><b>2.5. Access Token Mapping</b></p>
+					<p class="col-sub-headings"><b>2.6 Access Token Mapping</b></p>
 					<p class="col-para">Access Token Mapping is used to map the attributes to fulfill the access token attribute
 						contract. This configuration maps from a persistent grant into the access token attribute
 						contract and there should be a default mapping configured for each access token manager.</p>
@@ -711,7 +711,7 @@
 					<li><p class="col-para-bulletpoints">6.Review the Summary and tap Save.</p></li>
 								
 
-					<p class="col-sub-headings"><b>2.6.OpenID Connect Policy Management </b></p>
+					<p class="col-sub-headings"><b>2.7 OpenID Connect Policy Management </b></p>
 
 					<p class="col-para">Here we define OpenID Connect policies and manage them for obtaining user attributes
 						which act as the claims to be sent in an ID Token and, also in response to requests received
@@ -784,7 +784,7 @@
 							<li><p class="col-para-bulletpoints">9.Review Summary and Click Save.</p></li>
 
 
-							<p class="col-sub-headings"><b>2.7.Client Configuration for OAuth Server.</b></p>
+							<p class="col-sub-headings"><b>2.8 Client Configuration for OAuth Server.</b></p>
 
 							<p class="col-para">Here we can manage the configurations and policy information related to a client.</p>
 
@@ -833,7 +833,7 @@
 													<br>
 
 
-													<p class="col-sub-headings"><b>6.2 Configure SSL Server certificate</b></p>
+													<p class="col-sub-headings"><b>2.9 Configure SSL Server certificate</b></p>
 
 													<p class="col-para">SSL certificates are created as they need to be presented for getting access to the
 														PingFederate administrative console and for all the incoming HTTPS connections at the runtime
@@ -853,7 +853,8 @@
 																certificate to Trusted CAs in PingFederate Admin console.</p>
 
 
-																<p class="col-sub-headings">EIK Deployment in PingFederate<b></b></p>
+																
+																<h4><b>Deploying EIK in PingFederate</b></h4>
 
 
 																<p class="col-para">The following steps should be followed for the deployment of EBS Integration Kit in
@@ -929,7 +930,7 @@
 																					runtime servers in the same directory location.</p>
 
 
-																		<p class="col-sub-headings">7.2 EBS DataSource (DBCX) File Creation<b></b></p>
+																		<p class="col-sub-headings">7.2 EBS DataSource (DBCX) File Creation<b</p>
 
 
 
