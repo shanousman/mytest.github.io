@@ -1027,30 +1027,94 @@
 																			servers in the same directory location.</p>
 
 
+																			<p class="col-sub-headings">7.3 Deploying the log4j2.xml File<b></b></p>
 
 
+																			<p class="col-para">Move the provided log4j2.xml file to the following location</p>
 
 
+																			<p class="col-para"><pf_install>/pingfederate/EBSAuth</p>
+
+																			<p class="col-para">Note: If PingFederate is configured in Cluster, copy the log4j2.xml file to all the runtime
+																				servers in the same directory location.</p>
 
 
+																				<p class="col-sub-headings"><b>7.4 Deploying the cacerts File</b></p>
 
 
+																				<p class="col-para">Move the java cacerts file to the following location:</p>
+
+																				<p class="col-para"><pf_install>/pingfederate/EBSAuth</p>
+
+																				<p class="col-para">Note: If PingFederate is configured in Cluster, copy the cacerts file to all the runtime 
+																					servers in the same directory location.</p>
 
 
+																					<p class="col-sub-headings">7.6 Deploying EBSAuth.war File<b></b></p>
 
 
+																					<li><p class="col-para-bulletpoints">1.To deploy the EBSAuth.war file in the PingFederate server, navigate to the “deploy”
+																						directory in the PingFederate installation directory.</p></li>
+
+																						<p class="col-para"><pf_install>cd /<pf_install>/pingfederate/server/default/deploy</p>
 
 
+																					<li><p class="col-para-bulletpoints">2.Now copy and place the EBSAuth.war file in the above deploy directory.</p></li>
+
+																					<p class="col-para">Note: If PingFederate is configured in Cluster, copy the EBSAuth.war file to all the
+																						runtime servers.</p>
 
 
+																					<li><p class="col-para-bulletpoints">3.Restart the PingFederate runtime servers (on All runtime engine nodes if it is a
+																						clustered deployment)</p></li>
 
 
+																					<p class="col-sub-headings">8 System Profile Parameter changes in EBS<b></b></p>
 
 
+																					<p class="col-para"> The following Oracle EBS System Profile changes will enable SSO by delegating the authentication
+																							to PingFederate via EIK.</p>																				
+																							
+																					<p class="col-sub-headings">8.1 System Profile Changes<b></b></p>
 
 
+																					<li><p class="col-para-bulletpoints">1.Login into the EBS Application using the System Admin credentials.</p></li>
 
+																					<li><p class="col-para-bulletpoints">2.Locate and change the following EBS system profiles at Site Level for enabling SSO.</p></li>
+																					
 
+																					<br>
+																					<img src="assets/img/pf-30.png" alt="" class="col-images-intro"/>
+																					<br>
+																					<br>
+
+																					<li><p class="col-para-bulletpoints">3.Restart the EBS Application Server once the changes had been made and this completes
+																						the SSO profile parameter changes in Oracle EBS.</p></li>
+
+																					<p class="col-sub-headings">9 SSO Testing for Oracle EBS<b></b></p>
+
+																					<li><p class="col-para-bulletpoints">1.Enter the URL for SSO of EBS (For Example: <ebs-hostname>:<port>)</p></li>
+
+																					        <br>
+																							<img src="assets/img/pf-31.png" alt="" class="col-images-intro"/>
+																							<br>
+																							<br>
+
+																					<li><p class="col-para-bulletpoints">2.This URL redirects the user to Pingfederate which throws up an authentication prompt for
+																								entering the user credentials.</p></li>
+
+																								<br>
+																								<img src="assets/img/pf-32.png" alt="" class="col-images-intro"/>
+																								<br>
+																								<br>
+
+																								<li><p class="col-para-bulletpoints">3.On successful validation of the user credentials, the user will get access to the EBS
+																									Homepage.</p></li>
+
+																									<br>
+																									<img src="assets/img/pf-33.png" alt="" class="col-images-intro"/>
+																									<br>
+																									<br>
 
 
 
