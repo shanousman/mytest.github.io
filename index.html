@@ -526,7 +526,7 @@
 						<a style="padding:32px" name="Introduction"></a>
 						<!-- ### FEATURES ### -->
 						<p class="col-sub-headings"><b>2.0 Configure HTML Form Adapter</b></p>
-						<ul style="margin-left:30px;" class="col-para-bulletpoints">
+						<ul style="margin-left:30px;" class="col-para">
 							<li><p class="col-para">1. In PingFederate console go to Identity Provider >> Adapters>>Click New Adapter</p></li>
 							<li><p class="col-para">2. Provide the Instance Name & ID then Select “Type” as “HTML Form IdP Adapter” and click Next</p></li>
 							<br>
@@ -575,7 +575,7 @@
 							</ul>
 						<p class="col-sub-headings"><b>2.2 Authorization Server Settings</b></p>
 						<p class="col-para">Authorization Server Settings provide general configuration and policy for the PingFederate Authorization Server</p>
-						<ul style="margin-left:30px;" class="col-para-bulletpoints">
+						<ul style="margin-left:30px;" class="col-para">
 						
 						<li><p class="col-para">1. Go to OAuth Server >> Under Authorization Server >> Authorization Server Settings</p></li>
 						<li><p class="col-para">2. Enable the Track Users session for Log out checkbox and leave the remaining as default and click Save</p></li>
@@ -590,7 +590,7 @@
 					<p class="col-para">Scopes can be declared as dynamic, which allows OAuth clients to requestscopes where a
 						component of the scope name is variable. Common scopes are available to OAuth clients
 						by default unless individual clients are configured to restrict common scopes</p>
-					<ul style="margin-left:30px;" class="col-para-bulletpoints">
+					<ul style="margin-left:30px;" class="col-para">
 					<li><p class="col-para">1.  Go to OAuth Server >>Under Authorization Server >> Scope Management</p></li>
 					<li><p class="col-para">2. The Default scopes for PingFederate are Email, Profile, Openid, Address, Phone</p></li>
 					<br>
@@ -605,7 +605,7 @@
 					<p class="col-para">This configuration allows you tomap attributes based on an IdP adapter configuration into
 						the USER_KEY and USER_NAME attributes (presented to the user for authorization
 						permission) for a persistent grant, as well as the extended attributes</p>
-					<ul style="margin-left:30px;" class="col-para-bulletpoints">
+					<ul style="margin-left:30px;" class="col-para">
 					<li><p class="col-para">1. Go to OAuth Server >> Authorization Server >> IdP Adapter Mapping and select HTML Form Adapter and click Add Mapping  </p></li>
 					<li><p class="col-para">2. Add any Data Store details if values are pulled from a Data Store. If not, click Next</p></li>
 					<li><p class="col-para">3. In Contract Fulfillment, Map the USER_NAME & USER_KEY value from either the Adapter or Data Store </p></li>
@@ -623,7 +623,7 @@
 					<p class="col-para">PingFederate uses Access Token Management plugins to issue and validate OAuth
 						access tokens. Each plugin instance can have its own token type, configuration settings,
 						and attribute contract.</p>
-					<ul style="margin-left:30px;" class="col-para-bulletpoints">
+					<ul style="margin-left:30px;" class="col-para">
 					<li><p class="col-para">1.  Go to OAuth Server >> Under Token Mapping >> Access Token Management >> Create	New Instance by providing the Instance Name & ID, Type as “JSON Web Token” Click Next.</p></li>
 					<br>
 					<img src="assets/img/pf-10.png" alt="" class="col-images-intro"/>
@@ -667,7 +667,7 @@
 					<p class="col-para">Access Token Mapping is used to map the attributes to fulfill the access token attribute
 						contract. This configuration maps from a persistent grant into the access token attribute
 						contract and there should be a default mapping configured for each access token manager.</p>
-					<ul style="margin-left:30px;" class="col-para-bulletpoints">
+					<ul style="margin-left:30px;" class="col-para">
 					<li><p class="col-para-bulletpoints">1.  Go to OAuth Server >> Under Token Mapping >> Access Token Mapping.</p></li>
 					<br>
 					<img src="assets/img/pf-10.png" alt="" class="col-images-intro"/>
@@ -717,15 +717,15 @@
 						which act as the claims to be sent in an ID Token and, also in response to requests received
 						at the PingFederate User Info endpoint. Policies that are defined here can be mapped to
 						specific OAuth clients.</p>
-					<li><p class="col-para-bulletpoints">1.Go to OAuth Server >> Token Mapping >> OpenID Connect Policy Management >> Add
+					<li><p class="col-para">1.Go to OAuth Server >> Token Mapping >> OpenID Connect Policy Management >> Add
 							Policy.</p></li>
-					<li><p class="col-para-bulletpoints">2.Provide a Policy Name & Select the Access Token Manager and leave the remaining as
+					<li><p class="col-para">2.Provide a Policy Name & Select the Access Token Manager and leave the remaining as
 							default. Click Next.</p></li>
 
 					<br>
 					<img src="assets/img/pf-17.png" alt="" class="col-images-intro"/>
 
-					<li><p class="col-para-bulletpoints">3.Under Attribute Contract, Extend the Contract by manually adding ‘eik_username’ and
+					<li><p class="col-para">3.Under Attribute Contract, Extend the Contract by manually adding ‘eik_username’ and
 						delete the other attributes present. Enable checkboxes for ‘Override Default Delivery,.</p></li>
 
 					<br>
@@ -733,9 +733,9 @@
 					<br>
 					<br>	
 
-					<li><p class="col-para-bulletpoints">4.Click Next.</p></li>
+					<li><p class="col-para">4.Click Next.</p></li>
 
-					<li><p class="col-para-bulletpoints">5.Under Attribute Scopes Section, select openid from the Scope dropdown and in
+					<li><p class="col-para">5.Under Attribute Scopes Section, select openid from the Scope dropdown and in
 						Attributes tick the ‘eik_username’ checkbox.</p></li>
 
 					<br>
@@ -743,7 +743,7 @@
 					<br>
 					<br>	
 
-					<li><p class="col-para-bulletpoints">6.Attributes can be fetched from any of the datastore at the runtime or leave it as to use
+					<li><p class="col-para">6.Attributes can be fetched from any of the datastore at the runtime or leave it as to use
 						the values presented in the Token.</p></li>
 
 					<br>
@@ -751,7 +751,7 @@
 					<br>
 					<br>	
 
-					<li><p class="col-para-bulletpoints">7.Under Contract Fulfillment Section, Map the Sub & eik_username attribute from the
+					<li><p class="col-para">7.Under Contract Fulfillment Section, Map the Sub & eik_username attribute from the
 							source - Access Token and value – username.</p></li>
 
 
@@ -766,7 +766,7 @@
 					<br>
 					<br>
 
-					<li><p class="col-para-bulletpoints">8.In the next page, provide any restriction rules in case of restricting any unauthorized
+					<li><p class="col-para">8.In the next page, provide any restriction rules in case of restricting any unauthorized
 						access.</p></li>
 
 						<p class="col-para">Note: In this screen, we define the criteria that must be satisfied so that
@@ -781,7 +781,7 @@
 							<br>
 							<br>
 
-							<li><p class="col-para-bulletpoints">9.Review Summary and Click Save.</p></li>
+							<li><p class="col-para">9. Review Summary and Click Save.</p></li>
 
 
 							<p class="col-sub-headings"><b>2.8 Client Configuration for OAuth Server.</b></p>
@@ -790,24 +790,24 @@
 
 							<li><p class="col-para-bulletpoints">1.In the PingFederate Admin Console, go to OAuth Server >> Clients >> Create New.</p></li>
 								
-								<li><p class="col-para-bulletpoints">2.Create a new client with the following details
+								<li><p class="col-para">2.Create a new client with the following details
 									Client Name : “<Specify any Client Name for EIK>”
 									Client ID : “<Specify any Client ID for EIK>”
 									Client Secret : “<(Create secret using Generate Secret option)>”.</p></li>
 
-									<li><p class="col-para-bulletpoints">3.Type the Redirection URL in the format:
+									<li><p class="col-para">3.Type the Redirection URL in the format:
 										https://<pf-hostname>:<pf-runtime-port>/<context>/handler.</p></li>
 
-										<li><p class="col-para-bulletpoints">4.Tick the checkbox for Bypass Authorization Approval.</p></li>
+										<li><p class="col-para">4.Tick the checkbox for Bypass Authorization Approval.</p></li>
 
-											<li><p class="col-para-bulletpoints">5.For Allowed Grant Types, select Authorization Code and Refresh Token.</p></li>
+											<li><p class="col-para">5.For Allowed Grant Types, select Authorization Code and Refresh Token.</p></li>
 
-												<li><p class="col-para-bulletpoints">6.For Default Access Token Manager choose JSONWebToken.</p></li>
+												<li><p class="col-para">6.For Default Access Token Manager choose JSONWebToken.</p></li>
 
 
-													<li><p class="col-para-bulletpoints">7.Under OpenID Connectsection, choose the Policy you configured just before.</p></li>
+													<li><p class="col-para">7.Under OpenID Connectsection, choose the Policy you configured just before.</p></li>
 
-													<li><p class="col-para-bulletpoints">8.Leave the remaining as default and click Save</p></li>
+													<li><p class="col-para">8.Leave the remaining as default and click Save</p></li>
 
 
 													<br>
@@ -841,12 +841,12 @@
 														part, else we need to proceed with the following steps to configure a self-signed certificate:</p>
 
 
-														<li><p class="col-para-bulletpoints">1.In PingFederate Click Security >> Security and Certificate Key Management >> SSL
+														<li><p class="col-para">1.In PingFederate Click Security >> Security and Certificate Key Management >> SSL
 															Server Certificate >> Create New.</p></li>
 
-														<li><p class="col-para-bulletpoints">2.Enter the details and create a certificate.</p></li>
+														<li><p class="col-para">2.Enter the details and create a certificate.</p></li>
 
-														<li><p class="col-para-bulletpoints">3.Export this certificate now with the option of exporting “Certificate Only” and notwith
+														<li><p class="col-para">3.Export this certificate now with the option of exporting “Certificate Only” and notwith
 															the private key.</p></li>
 
 															<p class="col-para">Note: As part of the Key Generation process, add the exported
@@ -854,7 +854,7 @@
 
 
 																
-																<h4><b>Deploying EIK in PingFederate</b></h4>
+														<h4><b>Deploying EIK in PingFederate</b></h4>
 
 
 																<p class="col-para">The following steps should be followed for the deployment of EBS Integration Kit in
@@ -863,41 +863,41 @@
 																	before deploying the EBS Integration Kit.</p>
 
 
-																	<li><p class="col-para-bulletpoints">1.Navigate to <pf_install>/pingfederate directory.</p></li>
+																	<li><p class="col-para">1.Navigate to <pf_install>/pingfederate directory.</p></li>
 
 
-																	<li><p class="col-para-bulletpoints">2.Create a new directory named “EBSAuth”. After creation, the directory structure will
+																	<li><p class="col-para">2.Create a new directory named “EBSAuth”. After creation, the directory structure will
 																		look like the following:
 																		<pf_install>/pingfederate/EBSAuth.</p></li>
 
 
-																	<li><p class="col-para-bulletpoints">3.Now, Place the EBS IKT license file “ebsauth.lic” in <pf_install>/pingfederate /EBSAuth
+																	<li><p class="col-para">3.Now, Place the EBS IKT license file “ebsauth.lic” in <pf_install>/pingfederate /EBSAuth
 																		directory.</p></li>
 
 
-																	<li><p class="col-para-bulletpoints">4.Now navigate to user’s base path using cd ~ and set the environmental variable for
+																	<li><p class="col-para">4.Now navigate to user’s base path using cd ~ and set the environmental variable for
 																		EIK_HOME in .bash profile : vi .bash_profile
 																		.</p></li>
 
 
-																	<li><p class="col-para-bulletpoints">5.Set EIK_HOME using this command: export EIK_HOME = <pf_install>/pingfederate.</p></li>
+																	<li><p class="col-para">5.Set EIK_HOME using this command: export EIK_HOME = <pf_install>/pingfederate.</p></li>
 
 
-																	<li><p class="col-para-bulletpoints">6.Save and close the file.</p></li>
+																	<li><p class="col-para">6.Save and close the file.</p></li>
 
 																	
-																	<li><p class="col-para-bulletpoints">7.Enter the following command to source the bash file: . ./.bash_profile.</p></li>
+																	<li><p class="col-para">7.Enter the following command to source the bash file: . ./.bash_profile.</p></li>
 
 
-																	<li><p class="col-para-bulletpoints">8.Verify the new settings using the following commands, echo $EIK_HOME.</p></li>
+																	<li><p class="col-para">8.Verify the new settings using the following commands, echo $EIK_HOME.</p></li>
 
 
 
 																	<p class="col-para">Note: If PingFederate is configured in Cluster, repeatsteps 1 to 8 in all the runtime
 																		servers.</p>
 
-
-																		<p class="col-sub-headings">7.1 EIKAuth Config File Generation<b></b></p>
+																		<p class="col-sub-headings"><b>3.1 EIKAuth Config File Generation</b></p>
+																		
 
 
 																		<li><p class="col-para-bulletpoints">1.The JAR file EIKutility.jar needs to be placed in the $EIK_HOME directory created in the
@@ -930,7 +930,8 @@
 																					runtime servers in the same directory location.</p>
 
 
-																		<p class="col-sub-headings">7.2 EBS DataSource (DBCX) File Creation<b</p>
+																		<p class="col-sub-headings">7.2 <b</p>
+																		<p class="col-sub-headings"><b>3.2 EBS DataSource (DBCX) File Creation</b></p>
 
 
 
@@ -998,7 +999,8 @@
 																			servers in the same directory location.</p>
 
 
-																			<p class="col-sub-headings">7.3 Deploying the log4j2.xml File<b></b></p>
+																			<p class="col-sub-headings">7.3 <b></b></p>
+																			<p class="col-sub-headings"><b>3.3 Deploying the log4j2.xml File</b></p>
 
 
 																			<p class="col-para">Move the provided log4j2.xml file to the following location</p>
@@ -1009,8 +1011,7 @@
 																			<p class="col-para">Note: If PingFederate is configured in Cluster, copy the log4j2.xml file to all the runtime
 																				servers in the same directory location.</p>
 
-
-																				<p class="col-sub-headings"><b>7.4 Deploying the cacerts File</b></p>
+																				<p class="col-sub-headings"><b>3.3 Deploying the cacerts File</b></p>
 
 
 																				<p class="col-para">Move the java cacerts file to the following location:</p>
@@ -1020,38 +1021,38 @@
 																				<p class="col-para">Note: If PingFederate is configured in Cluster, copy the cacerts file to all the runtime 
 																					servers in the same directory location.</p>
 
+																				<p class="col-sub-headings"><b>3.4 Deploying EBSAuth.war File</b></p>
 
-																					<p class="col-sub-headings">7.6 Deploying EBSAuth.war File<b></b></p>
 
-
-																					<li><p class="col-para-bulletpoints">1.To deploy the EBSAuth.war file in the PingFederate server, navigate to the “deploy”
+																					<li><p class="col-para">1.To deploy the EBSAuth.war file in the PingFederate server, navigate to the “deploy”
 																						directory in the PingFederate installation directory.</p></li>
 
 																						<p class="col-para"><pf_install>cd /<pf_install>/pingfederate/server/default/deploy</p>
 
 
-																					<li><p class="col-para-bulletpoints">2.Now copy and place the EBSAuth.war file in the above deploy directory.</p></li>
+																					<li><p class="col-para">2.Now copy and place the EBSAuth.war file in the above deploy directory.</p></li>
 
 																					<p class="col-para">Note: If PingFederate is configured in Cluster, copy the EBSAuth.war file to all the
 																						runtime servers.</p>
 
 
-																					<li><p class="col-para-bulletpoints">3.Restart the PingFederate runtime servers (on All runtime engine nodes if it is a
+																					<li><p class="col-para">3.Restart the PingFederate runtime servers (on All runtime engine nodes if it is a
 																						clustered deployment)</p></li>
 
 
-																					<p class="col-sub-headings">8 System Profile Parameter changes in EBS<b></b></p>
+																					<p class="col-sub-headings">4 System Profile Parameter changes in EBS<b></b></p>
 
 
 																					<p class="col-para"> The following Oracle EBS System Profile changes will enable SSO by delegating the authentication
 																							to PingFederate via EIK.</p>																				
 																							
-																					<p class="col-sub-headings">8.1 System Profile Changes<b></b></p>
+																					
+																					<p class="col-sub-headings"><b>4.1 System Profile Changes</b></p>
 
 
-																					<li><p class="col-para-bulletpoints">1.Login into the EBS Application using the System Admin credentials.</p></li>
+																					<li><p class="col-para">1.Login into the EBS Application using the System Admin credentials.</p></li>
 
-																					<li><p class="col-para-bulletpoints">2.Locate and change the following EBS system profiles at Site Level for enabling SSO.</p></li>
+																					<li><p class="col-para">2.Locate and change the following EBS system profiles at Site Level for enabling SSO.</p></li>
 																					
 
 																					<br>
@@ -1059,19 +1060,20 @@
 																					<br>
 																					<br>
 
-																					<li><p class="col-para-bulletpoints">3.Restart the EBS Application Server once the changes had been made and this completes
+																					<li><p class="col-para">3.Restart the EBS Application Server once the changes had been made and this completes
 																						the SSO profile parameter changes in Oracle EBS.</p></li>
 
-																					<p class="col-sub-headings">9 SSO Testing for Oracle EBS<b></b></p>
+																					
+																					<p class="col-sub-headings"><b>4.2 SSO Testing for Oracle EBS</b></p>
 
-																					<li><p class="col-para-bulletpoints">1.Enter the URL for SSO of EBS (For Example: <ebs-hostname>:<port>)</p></li>
+																					<li><p class="col-para">1.Enter the URL for SSO of EBS (For Example: <ebs-hostname>:<port>)</p></li>
 
 																					        <br>
 																							<img src="assets/img/pf-31.png" alt="" class="col-images-intro"/>
 																							<br>
 																							<br>
 
-																					<li><p class="col-para-bulletpoints">2.This URL redirects the user to Pingfederate which throws up an authentication prompt for
+																					<li><p class="col-para">2.This URL redirects the user to Pingfederate which throws up an authentication prompt for
 																								entering the user credentials.</p></li>
 
 																								<br>
@@ -1079,7 +1081,7 @@
 																								<br>
 																								<br>
 
-																								<li><p class="col-para-bulletpoints">3.On successful validation of the user credentials, the user will get access to the EBS
+																								<li><p class="col-para">3.On successful validation of the user credentials, the user will get access to the EBS
 																									Homepage.</p></li>
 
 																									<br>
