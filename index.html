@@ -575,7 +575,8 @@
 							</ul>
 						<p class="col-sub-headings"><b>2.1. Authorization Server Settings</b></p>
 						<p class="col-para">Authorization Server Settings provide general configuration and policy for the PingFederate Authorization Server</p>
-						<ul style="margin-left:30px;" class="col-para-bulletpoints"></ul>
+						<ul style="margin-left:30px;" class="col-para-bulletpoints">
+						
 						<li><p class="col-para-bulletpoints">1. Go to OAuth Server >> Under Authorization Server >> Authorization Server Settings</p></li>
 						<li><p class="col-para-bulletpoints">2. Enable the Track Users session for Log out checkbox and leave the remaining as default and click Save</p></li>
 						<br>
@@ -589,7 +590,7 @@
 					<p class="col-para">Scopes can be declared as dynamic, which allows OAuth clients to requestscopes where a
 						component of the scope name is variable. Common scopes are available to OAuth clients
 						by default unless individual clients are configured to restrict common scopes</p>
-					<ul style="margin-left:30px;" class="col-para-bulletpoints"></ul>
+					<ul style="margin-left:30px;" class="col-para-bulletpoints">
 					<li><p class="col-para-bulletpoints">1.  Go to OAuth Server >>Under Authorization Server >> Scope Management</p></li>
 					<li><p class="col-para-bulletpoints">2. The Default scopes for PingFederate are Email, Profile, Openid, Address, Phone</p></li>
 					<br>
@@ -604,7 +605,7 @@
 					<p class="col-para">This configuration allows you tomap attributes based on an IdP adapter configuration into
 						the USER_KEY and USER_NAME attributes (presented to the user for authorization
 						permission) for a persistent grant, as well as the extended attributes</p>
-					<ul style="margin-left:30px;" class="col-para-bulletpoints"></ul>
+					<ul style="margin-left:30px;" class="col-para-bulletpoints">
 					<li><p class="col-para-bulletpoints">1. Go to OAuth Server >> Authorization Server >> IdP Adapter Mapping and select HTML Form Adapter and click Add Mapping  </p></li>
 					<li><p class="col-para-bulletpoints">2. Add any Data Store details if values are pulled from a Data Store. If not, click Next</p></li>
 					<li><p class="col-para-bulletpoints">3. In Contract Fulfillment, Map the USER_NAME & USER_KEY value from either the Adapter or Data Store </p></li>
@@ -622,7 +623,7 @@
 					<p class="col-para">PingFederate uses Access Token Management plugins to issue and validate OAuth
 						access tokens. Each plugin instance can have its own token type, configuration settings,
 						and attribute contract.</p>
-					<ul style="margin-left:30px;" class="col-para-bulletpoints"></ul>
+					<ul style="margin-left:30px;" class="col-para-bulletpoints">
 					<li><p class="col-para-bulletpoints">1.  Go to OAuth Server >> Under Token Mapping >> Access Token Management >> Create	New Instance by providing the Instance Name & ID, Type as “JSON Web Token” Click Next.</p></li>
 					<br>
 					<img src="assets/img/pf-10.png" alt="" class="col-images-intro"/>
@@ -666,7 +667,7 @@
 					<p class="col-para">Access Token Mapping is used to map the attributes to fulfill the access token attribute
 						contract. This configuration maps from a persistent grant into the access token attribute
 						contract and there should be a default mapping configured for each access token manager.</p>
-					<ul style="margin-left:30px;" class="col-para-bulletpoints"></ul>
+					<ul style="margin-left:30px;" class="col-para-bulletpoints">
 					<li><p class="col-para-bulletpoints">1.  Go to OAuth Server >> Under Token Mapping >> Access Token Mapping.</p></li>
 					<br>
 					<img src="assets/img/pf-10.png" alt="" class="col-images-intro"/>
@@ -1133,395 +1134,7 @@
 
 
 
-					<a style="padding:32px" name="Enterprise Deployement Model"></a>
-
-
-
-
-
-
-
-
-					<p class="col-sub-headings"><b>2. Enterprise Deployment Model</b></p>
-					<p class="col-para">Authenion supports a Gateway architecture for its
-							protected Oracle applications. In this model, the traffic is initially
-							directed to Authenion. Authenion grants or denies access by redirecting
-							the traffic to Authentication providers.</p>
-						<!-- <ul class="col-para-bulletpoints"> -->
-						<ul style="margin-left:30px;" class="col-para-bulletpoints">
-							<li><p class="col-para-bulletpoints">This deployment model can be set up
-									quickly without disrupting the applications. The Authenion will not be
-									installed on separate servers from the application web servers.</p></li>
-							<li><p class="col-para-bulletpoints">With the fewer component
-									architecture, it is easy to identify issues and troubleshoot. All
-									transactions are logged, and it is easier to view any specific events.</p></li>
-						</ul>
-						<img src="assets/img/deploymentmodel.png" alt="" class="col-images-intro"><br>
-						<a style="padding:32px" name="What can I do with Authenion"></a>
-						<br><p class="col-sub-headings"><b>3. What can I do with Authenion?</b></p>
-						<p class="col-para">Authenion is a light-weight product that allows you to
-							enable a secure Single Sign-On solution for your Oracle Enterprise
-							applications.</p>
-						<p class="col-para">The main functionalities are:</p>
-						<!-- <ul class="col-para-bulletpoints"> -->
-						<ul style="margin-left:30px;" class="col-para-bulletpoints">
-							<li><p class="col-para-bulletpoints">Use Authenion to protect Oracle
-									applications</p></li>
-							<li><p class="col-para-bulletpoints">Connect Authenion with external
-									OpenID Connect providers for authentication</p></li>
-							<li><p class="col-para-bulletpoints">You can manage sessions for the
-									protected applications and use OAuth scopes to send user data to
-									applications</p></li>
-						</ul>
-
-
-						<a style="padding:32px" name="How does Authenion work"></a>
-						<p class="col-sub-headings"><b>4. How does Authenion work?</b></p>
-						<p class="col-para">Authenion acts as the gateway to your Oracle
-							Enterprise Applications and capture user requests & delegate it to your
-							Identity Provider (IdP) for authentication.</p>
-
-						<p class="col-sub-headings-sub"><b>Session Initiation</b></p>
-						<!-- <ul class="col-para-bulletpoints"> -->
-						<ul style="margin-left:30px;" class="col-para-bulletpoints">
-							<li><p class="col-para-bulletpoints">Using advanced & secured integration
-									standards, Authenion securely connects with your Identity Provider
-									using OAuth/OIDC protocols. This allows Authenion protected Oracle
-									Applications requests to be delegated to your centralized Identity
-									Provider in your organization.</p></li>
-							<li><p class="col-para-bulletpoints">The Identity Provider will be
-									responsible for challenging the user requests with strong
-									authentication schemes. The Identity Provider will also be responsible
-									for collecting the user attributes and send it to Authenion through
-									OAuth/OIDC tokens for further processing such as session establishment
-									& granting user-access. </p></li>
-						</ul>
-						<img src="assets/img/sessioninitiation.png" alt=""
-							class="col-images-sessionmgmt"><br><br>
-
-						<p class="col-sub-headings-sub"><b>Processing Steps</b></p>
-						<ol class="col-para-bulletpoints">
-							<li><p class="col-para-bulletpoints">&nbsp;User request access for Oracle
-									Applications</p></li>
-							<li><p class="col-para-bulletpoints">&nbsp;Authenion checks for the user
-									session, and it redirects the user’s request to IdP for authentication</p></li>
-							<li><p class="col-para-bulletpoints">&nbsp;IdP authenticates the user
-									using the adapters and against a data store configured to it</p></li>
-							<li><p class="col-para-bulletpoints">&nbsp;IdP retrieves the necessary
-									attributes from its configured data store and sends it to Authenion for
-									further processing</p></li>
-							<li><p class="col-para-bulletpoints">&nbsp;Authenion will receive the
-									authenticated user’s attributes and parse the attributes into
-									HTTP-Headers and send it to the target application</p></li>
-							<li><p class="col-para-bulletpoints">&nbsp;Oracle Applications will
-									retrieve & validate the HTTP-Headers from Authenion and grant access to
-									users based on their roles and responsibilities</p></li>
-						</ol>
-
-
-						<a style="padding:32px" name="What can I Configure with Authenion"></a>
-						<p class="col-sub-headings"><b>5. What can I Configure with Authenion?</b></p>
-						<p class="col-para">Authenion includes a wide range of configuration
-							features from its user interface (administrative console). The following
-							are the configuration we can perform in Authenion admin console.</p>
-
-						<table class="systemrequiremetable" cellpadding="5" cellspacing="5">
-
-							<tr>
-								<th class="symcomponent">Fields</th>
-								<th class="symcomponent">Values</th>
-							</tr>
-
-							<!--Applications-->
-							<tbody class="tbody">
-								<tr>
-									<td>
-										<p>Applications</p>
-									</td>
-
-									<td>
-										<ul>
-											<li class="li">Entry for the protected Oracle applications in
-												Authenion</li>
-
-										</ul>
-									</td>
-
-								</tr>
-								<!--OIDC Configurations-->
-								<tr>
-									<td>
-										<p>OIDC Configurations</p>
-									</td>
-									<td>
-
-										<ul>
-											<li class="li">Your Organization's Identity Provider setup with
-												Authenion for Authentication</li>
-
-										</ul>
-
-									</td>
-								</tr>
-
-								<!--Virtual Servers-->
-								<tr>
-									<td>
-										<p>Virtual Servers</p>
-									</td>
-									<td>
-
-										<ul>
-											<li class="li">Application domain or hostname for a gateway
-												architecture</li>
-										</ul>
-
-									</td>
-								</tr>
-
-								<!--Application Hosts-->
-								<tr>
-									<td>
-										<p>Application Hosts</p>
-									</td>
-									<td>
-
-										<ul>
-											<li class="li">Protected application's server details (Application
-												backend)</li>
-
-										</ul>
-
-									</td>
-								</tr>
-
-								<!--Resources-->
-								<tr>
-									<td>
-										<p>Resources</p>
-									</td>
-									<td>
-
-										<ul>
-											<li class="li">URI components of the protected applications</li>
-										</ul>
-
-									</td>
-								</tr>
-								<!--Header Mapping-->
-								<tr>
-									<td>
-										<p>Header Mapping</p>
-									</td>
-									<td>
-
-										<ul>
-											<li class="li">HTTP-Headers containing user data that needs to be
-												forwarded to the protected applications</li>
-
-										</ul>
-
-									</td>
-								</tr>
-
-								<!--Authenion Instance-->
-								<tr>
-									<td>
-										<p>Authenion Instance</p>
-									</td>
-									<td>
-
-										<ul>
-											<li class="li">Authenion plug-in responsible for transferring the
-												configuration data from UI to authenion server and vice versa. The
-												default port is ‘8090’ & uses ‘https’.</li>
-
-										</ul>
-
-									</td>
-								</tr>
-							</tbody>
-						</table>
-						<br><br>
-					</div>
-
-					<!-- ### SYSTEM REQUIREMENTS ### -->
-					<div>
-						<h4><b>System Requirements</b></h4>
-						<p class="col-para">The following requirements should be met for Authenion
-							installation. Authenion qualifies & certifies the following
-							configurations that they are compatible with the product. Authenion
-							supports IPv4 addressing. </p>
-						<table class="systemrequiremetable" cellpadding="5" cellspacing="5">
-
-							<tr>
-								<th class="symcomponent">System components</th>
-								<th class="symcomponent">Requirements</th>
-							</tr>
-
-							<tbody class="tbody">
-								<!--Supported Operating Systems-->
-								<a style="padding:32px" name="SupportedOS"></a>
-								<tr>
-									<td>
-										<p>Supported Operating Systems</p>
-									</td>
-
-									<td>
-										<ul>
-											<li class="li">Red Hat Enterprise Linux 7 & above</li>
-											<li class="li">CentOS 7 & above</li>
-											<li class="li">Oracle Enterprise Linux 7 & above</li>
-										</ul>
-									</td>
-
-								</tr>
-								<!--Linux User requirements in the Authenion Server-->
-								<a style="padding:32px" name="LinuxUserrequirements"></a>
-								<tr>
-									<td>
-										<p>Linux User requirements in the Authenion Server</p>
-									</td>
-									<td>
-
-										<ul>
-											<li class="li">Create a Linux user in the name of ‘appuser’ to
-												execute Authenion scripts.</li>
-											<li class="li">The 'appuser' should have Read/Write privileges to the
-												Authenion deployment package.</li>
-											<li class="li">Authenion should be installed in the ‘/home/appuser’
-												directory.</li>
-										</ul>
-
-									</td>
-								</tr>
-
-								<!--Supported Java environment-->
-								<a style="padding:32px" name="SupportedJavaenvironment"></a>
-								<tr>
-									<td>
-										<p>Supported Java environment</p>
-									</td>
-									<td>
-
-										<ul>
-											<li class="li">OpenJDK 11</li>
-											<li class="li">Oracle Java SE Development Kit 11 LTS / Oracle Java SE
-												Runtime Environment (Server JRE) 8</li>
-										</ul>
-
-									</td>
-								</tr>
-
-								<!--Minimum Hardware requirements-->
-								<a style="padding:32px" name="MinimumHR"></a>
-								<tr>
-									<td>
-										<p>Minimum Hardware requirements</p>
-									</td>
-									<td>
-
-										<ul>
-											<li class="li">2 CPU/Cores recommended</li>
-											<li class="li">4 GB of RAM</li>
-											<li class="li">5 GB available space</li>
-										</ul>
-
-									</td>
-								</tr>
-
-								<!--Recommended Hardware requirements-->
-								<a style="padding:32px" name="RecommendedHR"></a>
-								<tr>
-									<td>
-										<p>Recommended Hardware requirements</p>
-									</td>
-									<td>
-
-										<ul>
-											<li class="li">4 CPU/Cores recommended</li>
-											<li class="li">8 GB of RAM</li>
-											<li class="li">25 GB available space</li>
-										</ul>
-
-									</td>
-								</tr>
-								<!--Port requirements-->
-								<a style="padding:32px" name="PortRequirements"></a>
-								<tr>
-									<td>
-										<p>Default Port requirements</p>
-									</td>
-									<td>
-
-										<ul>
-											<li class="li">Authenion Sync&emsp;-&emsp;HTTPS,&emsp;TCP - 8090</li>
-											<li class="li">Authenion Virtual Server&emsp;-&emsp;HTTP (or)
-												HTTPS,&emsp;&emsp;TCP - 0 to 65535</li>
-										</ul>
-
-									</td>
-								</tr>
-							</tbody>
-						</table>
-						<br>
-						<br>
-
-						<!-- ### INSTALLATION ### -->
-						<div>
-							<!-- <a name="install-authenion section"></a> -->
-							<h4><b>Installation</b></h4>
-							<p class="col-para">This section provides instructions for installing,
-								configuring & starting/stopping Authenion product. Authenion can be
-								installed on the Linux servers. For the System requirements, please
-								visit System Requirements section.</p>
-							<a style="padding:32px" name="pre-reqs section"></a>
-							<p class="col-sub-headings"><b>1. Pre-requisites</b></p>
-							<!-- <ul class="col-para-bulletpoints"> -->
-							<ul style="margin-left:30px;" class="col-para-bulletpoints">
-								<li><p class="col-para-bulletpoints">Ensure the System Requirements are
-										met</p></li>
-								<li><p class="col-para-bulletpoints">Install a supported Java software
-										with the JAVA_HOME environment variable set</p></li>
-								<li><p class="col-para-bulletpoints">The JAVA_HOME variable must be set
-										representing the location of your Java installation</p></li>
-
-							</ul>
-
-
-							<!-- INSTALL AUTHENION SECTION -->
-							<a style="padding:32px" name="install-authenion section"></a>
-							<p class="col-sub-headings"><b>2. Install Authenion</b></p>
-							<ol class="col-para-bulletpoints">
-								<li><p class="col-para-bulletpoints">Request or download the
-										authenion-2.0 product distribution zip file and a valid license from
-										the Authenion support portal or by contacting your account manager in
-										LikeMinds.</p></li>
-								<li><p class="col-para-bulletpoints">Install authenion by unzipping the
-										authenion-2.0.zip into the <i>“/home/appuser”</i> directory in the
-										Authenion server.</p></li>
-								<li><p class="col-para-bulletpoints">Authenion file system after
-										extracting.</p></li>
-
-
-								<!-- install Authenion -->
-								<table class="systemrequiremetable" cellpadding="5" cellspacing="5">
-									<tr>
-										<th class="symcomponent"></th>
-										<th class="symcomponent"></th>
-									</tr>
-
-									<!--Applications-->
-									<tbody class="tbody">
-										<tr>
-											<td>
-												<p>Distribution ZIP file</p>
-											</td>
-
-											<td>
-												<ul>
-													<li class="li">Download & extract the distribution zip into the
-														installation directory <b>‘/home/appuser’</li>
+				
 
 													</ul>
 												</td>
