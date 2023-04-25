@@ -787,27 +787,276 @@
 
 							<p class="col-para">Here we can manage the configurations and policy information related to a client.</p>
 
-							<li><p class="col-para-bulletpoints">1.
-								</p></li>
+							<li><p class="col-para-bulletpoints">1.In the PingFederate Admin Console, go to OAuth Server >> Clients >> Create New.</p></li>
 								
-								<li><p class="col-para-bulletpoints">2.
-									</p></li>
+								<li><p class="col-para-bulletpoints">2.Create a new client with the following details
+									Client Name : “<Specify any Client Name for EIK>”
+									Client ID : “<Specify any Client ID for EIK>”
+									Client Secret : “<(Create secret using Generate Secret option)>”.</p></li>
 
-									<li><p class="col-para-bulletpoints">3.
-										.</p></li>
+									<li><p class="col-para-bulletpoints">3.Type the Redirection URL in the format:
+										https://<pf-hostname>:<pf-runtime-port>/<context>/handler.</p></li>
 
-										<li><p class="col-para-bulletpoints">4.
-											.</p></li>
+										<li><p class="col-para-bulletpoints">4.Tick the checkbox for Bypass Authorization Approval.</p></li>
 
-											<li><p class="col-para-bulletpoints">5.
-												</p></li>
+											<li><p class="col-para-bulletpoints">5.For Allowed Grant Types, select Authorization Code and Refresh Token.</p></li>
 
-												<li><p class="col-para-bulletpoints">6.
-													.</p></li>
+												<li><p class="col-para-bulletpoints">6.For Default Access Token Manager choose JSONWebToken.</p></li>
 
 
-													<li><p class="col-para-bulletpoints">7.
-														</p></li>
+													<li><p class="col-para-bulletpoints">7.Under OpenID Connectsection, choose the Policy you configured just before.</p></li>
+
+													<li><p class="col-para-bulletpoints">8.Leave the remaining as default and click Save</p></li>
+
+
+													<br>
+													<img src="assets/img/pf-23.png" alt="" class="col-images-intro"/>
+													<br>
+													<br>
+
+													<br>
+													<img src="assets/img/pf-24.png" alt="" class="col-images-intro"/>
+													<br>
+													<br>
+
+
+													<br>
+													<img src="assets/img/pf-25.png" alt="" class="col-images-intro"/>
+													<br>
+													<br>
+
+
+													<br>
+													<img src="assets/img/pf-26.png" alt="" class="col-images-intro"/>
+													<br>
+													<br>
+
+
+													<p class="col-sub-headings"><b>6.2 Configure SSL Server certificate</b></p>
+
+													<p class="col-para">SSL certificates are created as they need to be presented for getting access to the
+														PingFederate administrative console and for all the incoming HTTPS connections at the runtime
+														engine nodes.If you already own an SSL certificate for pingfederate we can skip to the Key Generation
+														part, else we need to proceed with the following steps to configure a self-signed certificate:</p>
+
+
+														<li><p class="col-para-bulletpoints">1.In PingFederate Click Security >> Security and Certificate Key Management >> SSL
+															Server Certificate >> Create New.</p></li>
+
+														<li><p class="col-para-bulletpoints">2.Enter the details and create a certificate.</p></li>
+
+														<li><p class="col-para-bulletpoints">3.Export this certificate now with the option of exporting “Certificate Only” and notwith
+															the private key.</p></li>
+
+															<p class="col-para">Note: As part of the Key Generation process, add the exported
+																certificate to Trusted CAs in PingFederate Admin console.</p>
+
+
+																<p class="col-sub-headings">EIK Deployment in PingFederate<b></b></p>
+
+
+																<p class="col-para">The following steps should be followed for the deployment of EBS Integration Kit in
+																	PingFederate server. As a pre-requisite, the EIKAuth.config configuration file & EIK.dbcx EBS
+																	DataSource (DBCX) file should be generated before deploying the EIK war package.Pre-Requisite: An environment variable ‘EIK_HOME’ should be set in the PingFederate server
+																	before deploying the EBS Integration Kit.</p>
+
+
+																	<li><p class="col-para-bulletpoints">1.Navigate to <pf_install>/pingfederate directory.</p></li>
+
+
+																	<li><p class="col-para-bulletpoints">2.Create a new directory named “EBSAuth”. After creation, the directory structure will
+																		look like the following:
+																		<pf_install>/pingfederate/EBSAuth.</p></li>
+
+
+																	<li><p class="col-para-bulletpoints">3.Now, Place the EBS IKT license file “ebsauth.lic” in <pf_install>/pingfederate /EBSAuth
+																		directory.</p></li>
+
+
+																	<li><p class="col-para-bulletpoints">4.Now navigate to user’s base path using cd ~ and set the environmental variable for
+																		EIK_HOME in .bash profile : vi .bash_profile
+																		.</p></li>
+
+
+																	<li><p class="col-para-bulletpoints">5.Set EIK_HOME using this command: export EIK_HOME = <pf_install>/pingfederate.</p></li>
+
+
+																	<li><p class="col-para-bulletpoints">6.Save and close the file.</p></li>
+
+																	
+																	<li><p class="col-para-bulletpoints">7.Enter the following command to source the bash file: . ./.bash_profile.</p></li>
+
+
+																	<li><p class="col-para-bulletpoints">8.Verify the new settings using the following commands, echo $EIK_HOME.</p></li>
+
+
+
+																	<p class="col-para">Note: If PingFederate is configured in Cluster, repeatsteps 1 to 8 in all the runtime
+																		servers.</p>
+
+
+																		<p class="col-sub-headings">7.1 EIKAuth Config File Generation<b></b></p>
+
+
+																		<li><p class="col-para-bulletpoints">1.The JAR file EIKutility.jar needs to be placed in the $EIK_HOME directory created in the
+																			previous section.</p></li>
+
+
+																		<li><p class="col-para-bulletpoints">2.Open terminal/command prompt (as Administrator) and navigate to EIK_HOME
+																			directory and execute the following command:
+																			java -cp EIKutility.jar com.likeminds.EBSAuth.EIKAdminUtility.</p></li>
+
+
+																		<li><p class="col-para-bulletpoints">3.On running the command, we get a dialog box as follows, Enter all values as per the
+																			configuration for all the fields using the template given below:
+																			# Configuration Panel #
+																			icx_cookie_domain = .<domain name> (the “ . “ period should preced the root domain
+																			name)
+																			icx_cookie_path = /
+																			ebs_landing_page = <EBS Home Page URL>
+																			ebs_logout_page = https://<pf or pa domain name>:<port>/idp/startSLO.ping
+																			#OIDC Configuration parameters 
+																			authentication_server_url = https://<pf/pa hostname>:<port>/as/authorization.oauth2
+																			token_endpoint_url = https:// <pf/pa hostname>:<port>/as/token.oauth2
+																			introspect_url = https:// <pf/pa hostname>:<port>/as/introspect.oauth2
+																			redirect_uri = https:// <pf/pa hostname>:<port>/EBSAuth/handler
+																			jwks_validation_url = https:// <pf/pa hostname>:<port>/pf/JWKS
+																			grant_type = authorization_code
+																			auth_type = OIDC
+																			JIT = false
+																			Scope = openid (necessary scope to return EBS username from PingFederate/LDAP store)
+																			Authentication Attribute = eik_username (non-editable)
+																			client_id = ***** # CLIENT_ID created on the PF console
+																			client_secret = ***** # CLIENT_SECRET created on the PF console
+																			Enter the context path of WAR = <Context of the war>
+																			(i.e., For EBSAuth.war, context is /EBSAuth)
+																			(Optional - For EBSAuthInst2.war, context is /EBSAuthInst2)
+																			Enter the issuer = <PingFederate OAuth/OIDC issuer>
+																			logoPath=https://likemindsconsulting.com/wp-content/uploads/2020/07/logo-1.png
+																			helpdeskMessage=<p>If issue persists, please contact technical 
+																			<ahref="https://support.likemindsconsulting.com">support</a></p>
+																			userinfo_url=https://<pf/pa hostname>:<port>/:9031/idp/userinfo.openid
+																			trustStorePath= https://<pf/pa hostname>:<port>/EBSAuth /cacerts
+																			UsePrivateTrustStore=true
+																			trustStorePassword=changeit
+																			# END #</p></li>
+
+																			<br>
+																			<img src="assets/img/pf-27.png" alt="" class="col-images-intro"/>
+																			<br>
+																			<br>
+
+
+																		<li><p class="col-para-bulletpoints">4.After entering these values in the dialog box, a file named EIKAuth.config gets
+																			generated at the EIK_HOME directory.</p></li>
+
+
+																		<li><p class="col-para-bulletpoints">5.Now, move the EIKAuth.config file to the following location:
+																			<pf_install>/pingfederate/EBSAuth</p></li>
+
+
+																		<p class="col-para">Note: If PingFederate is configured in Cluster, copy the EIKAuth.config file to all the
+																					runtime servers in the same directory location.</p>
+
+
+																		<p class="col-sub-headings">7.2 EBS DataSource (DBCX) File Creation<b></b></p>
+
+
+
+																		<li><p class="col-para-bulletpoints">1.Before proceeding with the DBCX file generation, a custom user should be created in
+																			the EBS Application FND_USER table (Username – EIKUSER) with the
+																			UMX|APPS_SCHEMA_CONNECT role enabled<pf_install></p></li>
+
+
+																	   <li><p class="col-para-bulletpoints">2.Place the JAR file EBSdatasource.jar in the $EIK_HOME directory & open the
+																		terminal/command prompt and navigate to EIK_HOME directory to execute and
+																		generate the EBS Datasource file:
+																		ava -cp EBSdatasource.jar com.likeminds.ebsauth.v1.EIKDatasource Y<pf_install></p></li>
+
+
+																			<p class="col-para">Note: The jar file can also be placed & executed in any server outside of
+																				PingFederate, provided, there should be a connectivity to the EBS Database from the
+																				execution source.</p>
+
+
+																		<li><p class="col-para-bulletpoints">3.In the nextstep, provide the configuration details of your environment as mentioned in
+																			the screenshot:<pf_install></p></li>
+																										
+																				<br>
+																				<img src="assets/img/pf-28.png" alt="" class="col-images-intro"/>
+																				<br>
+																				<br>
+
+																				<p class="col-para">Enter the connection factory class: oracle.jdbc.pool.OracleDataSource
+																					Enter the JDBC URL: jdbc:oracle:thin:@<EBS DB domain name>:<EBS DB Port>:<SID>
+																					(Use Scan hostnames in case of RAC database)</p>
+
+
+																					<p class="col-para">Enter APPS username:</p>
+																					<p class="col-para">Enter APPS password:</p>
+																					<p class="col-para">Enter Connection pool name: EBSAuth</p>
+																					<p class="col-para">Enter initial connection pool size: 10</p>
+																					<p class="col-para">Enter min. connection pool size: 10</p>
+																					<p class="col-para">Enter max. initial pool size: 50</p>
+																					<p class="col-para">Enter timeout check interval(Default is 30 secs): 30</p>
+																					<p class="col-para">Enter inactive connection timeout (Default is 0 secs): 30</p>
+																					<p class="col-para">Enter validate connection on borrow (true/false): true</p>
+																					<p class="col-para">Enter the EIK username: EIKUSER</p>
+																					<p class="col-para">Enter the EIK user password:</p>
+																					<p class="col-para">Enter the Context Path: </Context of the war file> </p>
+
+
+																		<li><p class="col-para-bulletpoints">4.After entering all the above-mentioned values, the EIKUSER will get registered with the
+																			following message.<pf_install></p></li>
+																												
+																				<br>
+																				<img src="assets/img/pf-29.png" alt="" class="col-images-intro"/>
+																				<br>
+																				<br>
+
+																		<li><p class="col-para-bulletpoints">5.As part of the successful execution, a new file EIK.dbcx will be generated in the
+																			EIK_HOME directory.<pf_install></p></li>																	
+																														
+
+
+																		<li><p class="col-para-bulletpoints">6.Now move the EIK.dbcx file to the following location:
+																			<pf_install>/pingfederate/EBSAuth	<pf_install></p></li>
+
+																																
+																		<p class="col-para">Note: If PingFederate is configured in Cluster, copy the EIK.DBCX file to all the runtime
+																			servers in the same directory location.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -821,6 +1070,14 @@
 
 
 					<a style="padding:32px" name="Enterprise Deployement Model"></a>
+
+
+
+
+
+
+
+
 					<p class="col-sub-headings"><b>2. Enterprise Deployment Model</b></p>
 					<p class="col-para">Authenion supports a Gateway architecture for its
 							protected Oracle applications. In this model, the traffic is initially
